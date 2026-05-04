@@ -1,0 +1,107 @@
+---
+title: "Introduction to gamestats"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to gamestats}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview of my package
+
+The `gamestats` package provides tools for exploring, summarizing, and
+visualizing video game data. It includes a built-in dataset of 20 popular
+video games with ratings, genres, playtime, and more.
+
+## How to do Installation
+
+You can install the package directly from GitHub:
+
+```{r install, eval = FALSE}
+devtools::install_github("ygraham-code/gamestats")
+```
+
+## Loading the Package
+
+```{r load}
+library(gamestats)
+```
+
+## Exploring the Dataset
+
+The `load_games()` function returns the full built-in dataset:
+
+```{r load-games}
+games <- load_games()
+head(games)
+```
+
+The dataset contains 20 games with the following variables:
+
+- **title** — name of the game
+- **genre** — genre category
+- **platform** — available platforms
+- **rating** — Metacritic score out of 100
+- **avg_playtime_hours** — average hours to complete
+- **year_released** — year of release
+- **developer** — game developer
+
+## Finding Top Games
+
+Use `top_games()` to find the highest rated games:
+
+```{r top-rated}
+top_games(5, by = "rating")
+```
+
+You can also rank by playtime:
+
+```{r top-playtime}
+top_games(5, by = "avg_playtime_hours")
+```
+
+## Genre Summary
+
+The `genre_summary()` function groups games by genre and returns
+average ratings, average playtime, and game counts:
+
+```{r genre-summary}
+genre_summary()
+```
+
+## Visualizing Ratings
+
+The `plot_ratings()` function creates a bar chart of top games by rating:
+
+```{r plot-ratings, fig.width=7, fig.height=5}
+plot_ratings(10)
+```
+
+## Game Reports
+
+The `game_report()` function creates an S3 object with details about
+a specific game:
+
+```{r game-report}
+report <- game_report("Elden Ring")
+print(report)
+```
+
+You can also use `summary()` for a shorter overview:
+
+```{r game-summary}
+summary(report)
+```
+
+## MY Conclusion
+
+The `gamestats` package makes it easy to explore and visualize video game
+data in R. Whether you want to find top rated games, compare genres, or
+generate individual game reports, gamestats has you covered!

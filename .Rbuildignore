@@ -1,3 +1,5 @@
 ^gamestats\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
+^doc$
+^Meta$
