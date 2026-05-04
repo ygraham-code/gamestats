@@ -1,0 +1,22 @@
+Package: gamestats
+Title: Video Game Statistics and Visualization Tools
+Version: 0.1.0
+Authors@R: 
+    person("Yasmine", "Graham", email = "yasminegraham33@gmail.com ", role = c("aut", "cre"))
+Description: A toolkit for exploring, summarizing, and visualizing video game 
+    data including ratings, genres, and playtime. Includes a built-in dataset 
+    of popular video games and functions for analysis and visualization.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0
+Imports:
+    ggplot2,
+    dplyr,
+    stringr
+Suggests:
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+
+
